@@ -45,7 +45,7 @@ alias source_ansible194='source ~/bin/virtualenv-py/ansible-1.9.4/bin/activate'
 
 # Useful sources
 if [ -d ~/Development-Ext/git-subrepo ]; then
-  source /Volumes/OSXData/Users/pdam/Development-Ext/git-subrepo/.rc
+  source $(dirname ~/Development-Ext/git-subrepo)/git-subrepo/.rc
 fi
 
 if [ -f /usr/local/Cellar/bash-completion/1.3/etc/bash_completion ]; then
