@@ -18,14 +18,17 @@ export HISTTIMEFORMAT="%F %T "
 shopt -s checkwinsize
 shopt -s extglob
 shopt -s cdspell
-export PS1="\[\033[0;37m\]\342\224\214\342\224\200$([[ $? != 0 ]] && echo "[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200")[\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+
+# Add git branch support
+source ~/bin/git-prompt.sh
+export PS1="\[\033[0;37m\]\342\224\214\342\224\200$([[ $? != 0 ]] && echo "[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200")[\[\033[0;33m\]\u\[\033[0;37m\]@\[\033[0;96m\]\h\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\[\033[0;35m\]\$(__git_ps1)\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
 
 # Make the shell colourful
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Setup PATH
-export PATH=$PATH:~/bin:~/.npm-global/bin
+export PATH=$PATH:~/bin:~/.npm-global/bin:/usr/local/sbin
 
 # Add NPM path to avoid permission issues
 export NODE_PATH=$NODE_PATH:~/.npm-global/lib/node_modules
@@ -40,8 +43,8 @@ alias filetree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 
 alias macvim='open -a macvim'
 alias atom='open -a atom'
 alias macdown='open -a macdown'
-alias source_ansible='source ~/bin/virtualenv-py/ansible/bin/activate'
-alias source_ansible194='source ~/bin/virtualenv-py/ansible-1.9.4/bin/activate'
+alias source_ansible2='source ~/bin/virtualenv-py/ansible2/bin/activate'
+alias source_ansible194='source ~/bin/virtualenv-py/ansible194/bin/activate'
 
 # Useful sources
 if [ -d ~/Development-Ext/git-subrepo ]; then
