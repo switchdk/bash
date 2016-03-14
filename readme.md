@@ -20,3 +20,11 @@ Change the hostname of an OSX computer. Slightly more challenging than on Linux 
 ## osx_remove_acl.sh and osx_remove_xattr.sh
 When synchronising files between multiple OSX devices, I often run into issues ACLs and extended attributes. These scripts remove ACLs and XATTR from the designated folders.
 
+## openssl_cipher_test.sh
+Script to test the supported cipher types of a web server i.e. SSL2/3, TLS1.x etc.
+
+Usage:
+
+```
+./openssl_cipher_test.sh <serveraddress> <port>
+```
